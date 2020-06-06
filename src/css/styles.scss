@@ -1,0 +1,350 @@
+@import 'variables';
+
+body,html, #root{
+    background-color: #F9F9F9 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.header{
+    position: absolute;
+    height:98px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid $grey;
+    >div{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        >div:nth-child(2){
+            display: flex;
+            a{
+                font-size: 16px;
+                color:$green;
+                text-decoration: none;
+                display: flex;
+                margin-right: 20px;
+                align-items: center;
+                img{
+                    width: 16px;
+                    margin-right: 5px;
+                }
+            }
+            span:nth-child(2){
+                display: flex;
+                cursor: pointer;
+                border: 1px solid $grey;
+                height: 40px;
+                width: 40px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 15px;
+                img{
+                    width: 16px;
+                }
+            }
+            span:nth-child(2):after{
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: #F89820;
+                right: -4px;
+                border-radius: 50%;
+               
+            }
+
+            span:nth-child(3){
+                display: flex;    
+                border: 1px solid $grey;
+                height: 40px;
+                width: 40px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: relative;
+                background-position: center !important;
+                background-size: cover !important;
+                img{
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    img{
+        width: 120px;
+    }
+}
+
+.sidebar{
+    position: absolute;
+    top:120px;
+    height: 100vh;
+    width: 255px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms;
+    z-index: 100;
+    padding: 40px 25px;
+    border:1px solid $grey;     
+        ul{
+            margin: 0;
+            list-style: none;
+            padding:0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            hr{
+                width: 100%;
+                border-top:1px solid $grey !important;
+            }
+            li{
+                height: 40px;
+                display: flex;
+                align-items: center;
+                span:first-child{
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 20px;
+                    display: flex;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                a{
+                    color:$green;
+                    text-decoration: none;
+                    display: flex;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                }
+                .active{
+                    color:$orange;
+                }
+            }
+        }
+}
+
+.sidebar-header{
+    position: fixed;
+    width: 100%;  
+    z-index: 1000;
+    display: flex;
+}
+
+.content{
+    position: relative;
+    top: 120px;
+    width: calc(100% - 275px);
+    left: 275px;
+
+}
+
+.searchbar {
+    display: flex;
+    div:first-child{
+        display: flex;
+        flex: auto;
+        margin-right: 10px;
+        span{
+            border: 1px solid $grey;
+            border-right: 0;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 0 15px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            img{
+                height: 17.5px;
+            }
+        }
+        input{
+            border: 1px solid $grey;
+            border-left: 0;
+            outline: 0;
+            height: 40px;
+            width: 100%;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    div:last-child{
+        background-color: #ffffff;
+        border: 1px solid $grey;
+        border-radius: 4px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img{
+            width: 18px;
+            margin-right: 10px;
+        }
+        span{
+            color:$green;
+            font-size: 16px;
+        }
+    }
+}
+
+.page-title{
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    display: flex;
+    span{
+        color:$green;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+
+.boxes{
+    .card{
+        transition: all 0.2s;
+        .card-title{
+            font-size: 16px;
+            color:$card;
+            margin-bottom: 5px;
+        }
+        .author{
+            font-size: 12px;
+            color:$card;
+        }
+        .card-text{
+            font-size: 14px;
+            color:$card;
+            span{
+                margin-right: 10px
+            }
+            .price{
+                color:$orange;
+                margin-right: 0;
+            }
+        }
+        .tags{
+            font-size: 14px;
+            color:$card;
+            display: flex;
+            span{
+                border:1px solid $grey;
+                padding: 5px 8px;
+                margin-right: 5px;
+                border-radius: 4px;
+                display: inline-flex;
+                margin-bottom: 5px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                display: block;
+            }
+            .plus{
+                min-width: 38px;
+            }
+        }
+        .tags-on-hover{
+            font-size: 14px;
+            color:$card;
+            span{
+                border:1px solid $grey;
+                padding: 5px 8px;
+                margin-right: 5px;
+                border-radius: 4px;
+                display: inline-flex;
+                margin-bottom: 5px;
+            }
+        }
+        padding: 0px;
+        margin: 0 15px 20px 15px !important;
+        border-radius: 4px !important;
+        border: 1px solid $grey !important;
+       .card-footer{
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        border-bottom-left-radius: 4px !important;
+        border-bottom-right-radius:4px !important;
+        button{
+            background-color: #ffffff;
+            border:0px;
+            padding: 5px 20px;
+            font-size: 16px;
+            border: 1px solid $orange;
+            color:$orange;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        button:hover{
+            color:#ffffff;
+            background-color: $orange;
+        }
+       
+        div{
+            display: flex;
+            align-items: center;
+            img{
+                height: 16px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+       }
+    }
+    .card-img-top{
+        border-top-left-radius: 4px !important;
+        border-top-right-radius: 4px !important;
+    }
+    .card:hover{
+        box-shadow: 1px 1px 4px #ccc;
+       
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .sidebar{
+        width: 50px;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        ul{
+            li{
+                a{  
+                    span:first-child{
+                        margin-right: 0;
+                    }
+                    span:last-child{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        width: calc(100% - 75px);
+        left: 75px
+    }
+   
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card{
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 100% !important;
+    }
+  }
